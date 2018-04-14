@@ -1,0 +1,3 @@
+<view class="newsTypes">
+  <view class="newsTypes-items" wx:for="{{newsTypes}}" wx:key="index">{{item}}</view>
+</view>

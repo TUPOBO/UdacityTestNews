@@ -1,0 +1,9 @@
+.newsTypes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.newsTypes-items {
+  width: 100rpx;
+  text-align: center;
+}
