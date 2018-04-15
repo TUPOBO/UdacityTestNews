@@ -2,16 +2,18 @@
   <view class="newsTypes-items" wx:for="{{newsTypes}}" wx:key="index">{{item}}</view>
 </view>
 <view class="newsList-wrapper">
-  <view class="newsList" wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="{{item}}">
+  <view class="newsList" wx:for="{{newsInfo}}" wx:key="{{item.id}}">
     <view class="newsInfo">
       <view class="newsTextInfo">
-        <viwe class="newsTitle">国内新闻新闻标题国内新闻新闻标题国内新闻新闻标题</viwe>
+        <view class="newsTitle">{{item.title}}</view>
         <view class="newsCopyright">
-          <view class="newsSource">新闻来源</view>
-          <view class="newsDate">04:09</view>
+          <view class="newsSource">{{item.source}}</view>
+          <view class="newsDate">{{item.date}}</view>
         </view>
       </view>
-      <image class="newsFirstImage" src="/image/news-icon.png"></image>
+      <view>
+        <image class="newsFirstImage" src="{{item.firstImage}}" model="scaleToFill"></image>
+      </view>
     </view>
   </view>
 </view>
