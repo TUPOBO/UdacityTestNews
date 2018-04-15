@@ -1,9 +1,63 @@
 .newsTypes {
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  margin-bottom: 30rpx;
 }
 
 .newsTypes-items {
-  width: 100rpx;
+  width: 60rpx;
   text-align: center;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  border-bottom: 2px solid red;
+}
+
+.newsList-wrapper {
+  /* padding: 0 10rpx; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.newsList {
+  display: flex;
+  align-items: center;
+  height: 250rpx;
+  margin: 0 40rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.newsInfo {
+  display: flex;
+}
+
+.newsTextInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 40rpx;
+}
+
+.newsTitle {
+  font-size: 30rpx;
+  line-break: 42rpx;
+  margin: 40rpx 0;
+}
+
+.newsCopyright {
+  display: flex;
+  font-size: 25rpx;
+  line-height: 35rpx;
+  color: rgba(0,0,0,0.5);
+}
+
+.newsSource {
+  margin-right: 20rpx;
+}
+
+.newsFirstImage {
+  width: 224rpx;
+  height: 225rpx;
+  background-color: #ccc;
 }
