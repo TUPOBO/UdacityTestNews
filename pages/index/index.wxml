@@ -1,5 +1,5 @@
 <view class="newsTypes">
-  <view class="newsTypes-items" wx:for="{{newsTypes}}" wx:key="index">{{item}}</view>
+  <view class="newsTypes-items" wx:for="{{newsTypes}}" data-type="{{item.type}}" bindtap="changeNewsType">{{item.name}}</view>
 </view>
 <view class="newsList-wrapper">
   <view class="newsList" wx:for="{{newsInfo}}" wx:key="{{item.id}}">
