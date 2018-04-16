@@ -1,11 +1,13 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/details/newsDetails"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "black",
     "navigationBarBackgroundColor": "#f00",
     "navigationBarTitleText": "UdacityTestNews",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
   }
 }

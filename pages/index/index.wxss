@@ -10,7 +10,7 @@
   text-align: center;
   font-size: 30rpx;
   line-height: 42rpx;
-  border-bottom: 2px solid red;
+  
 }
 
 .newsList-wrapper {
@@ -58,4 +58,9 @@
 .newsFirstImage {
   width: 180rpx;
   height: 180rpx;
+}
+
+.active {
+  color: red;
+  border-bottom: 2px solid red;
 }
