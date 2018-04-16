@@ -3,7 +3,7 @@
     bindtap="changeNewsType">{{item.name}}</view>
 </view>
 <view class="newsList-wrapper">
-  <view class="newsList" wx:for="{{newsInfo}}" wx:key="{{item.id}}">
+  <view class="newsList" wx:for="{{newsInfo}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="showNewsDetails">
     <view class="newsInfo">
       <view class="newsTextInfo">
         <view class="newsTitle">{{item.title}}</view>

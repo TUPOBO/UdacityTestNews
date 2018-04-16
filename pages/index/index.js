@@ -71,7 +71,6 @@ Page({
         this.getNewsInfo(type.type)
       }
     }
-    console.log('dfdas')
   },
 
   setNewsActiveType: function (type) {
@@ -127,5 +126,13 @@ Page({
     let type = event.currentTarget.dataset.type
     this.setNewsActiveType(type)
     this.getNewsInfo(type)
+  },
+
+  showNewsDetails: function (event) {
+    let newsId = event.currentTarget.dataset.id
+    console.log(newsId)
+    wx.navigateTo({
+      url: '/pages/details/newsDetails?id=' + newsId
+    })
   }
 })

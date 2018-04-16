@@ -1,2 +1,9 @@
 <!--pages/details/newsDetails.wxml-->
-<text>pages/details/newsDetails.wxml</text>
+<view class="newsDetails-wrapper">
+  <view class="newsTitle">新闻标题</view>
+  <view class="newsInfo">
+    <view class="newsSource">新闻来源</view>
+    <view class="newsDate">10:03</view>
+    <view class="newsReadCount">阅读 1470</view>
+  </view>
+</view>
