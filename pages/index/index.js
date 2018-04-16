@@ -53,7 +53,7 @@ Page({
   },
 
   /**
-   *
+   *页面首次加载时默认显示国内新闻
    *
    * @param {any} options
    */
@@ -63,16 +63,28 @@ Page({
     this.getNewsInfo(type)
   },
 
+  /**
+   * 下拉刷新，不改变当前活跃的新闻类别
+   *
+   */
   onPullDownRefresh: function () {
     for (let type of newsTypes) {
       if (type.active) {
-        console.log(type.type)
+        function callback () {
+          wx.stopPullDownRefresh()
+        }
+        // console.log(type.type)
         this.setNewsActiveType(type.type)
-        this.getNewsInfo(type.type)
+        this.getNewsInfo(type.type, callback)
       }
     }
   },
 
+  /**
+   * 点击新闻类别时，改变当前活跃的新闻类别
+   *
+   * @param {any} type
+   */
   setNewsActiveType: function (type) {
     let index = newsListIndex.indexOf(type)
     newsTypes[index].active = true
@@ -89,11 +101,11 @@ Page({
   },
 
   /**
-   *
+   *调用新闻api 获取该类别的新闻信息
    *
    * @param {any} type
    */
-  getNewsInfo: function (type) {
+  getNewsInfo: function (type, callback) {
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list',
       data: {
@@ -114,20 +126,33 @@ Page({
             firstImage: info.firstImage || '/image/news-icon.png'
           })
         }
-        console.log(newsInformation)
+        // console.log(newsInformation)
         this.setData({
           newsInfo: newsInformation
         })
+      },
+      complete: () => {
+        callback && callback()
       }
     })
   },
 
+  /**
+   * 点击类别栏，改变当前活跃的类别样式及展示该类别的新闻信息
+   *
+   * @param {any} event
+   */
   changeNewsType: function (event) {
     let type = event.currentTarget.dataset.type
     this.setNewsActiveType(type)
     this.getNewsInfo(type)
   },
 
+  /**
+   * 点击新闻列表，跳转新闻详情页
+   *
+   * @param {any} event
+   */
   showNewsDetails: function (event) {
     let newsId = event.currentTarget.dataset.id
     console.log(newsId)
