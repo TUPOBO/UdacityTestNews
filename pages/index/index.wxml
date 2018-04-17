@@ -12,8 +12,8 @@
           <view class="newsDate">{{item.date}}</view>
         </view>
       </view>
-      <view>
-        <image class="newsFirstImage" src="{{item.firstImage}}" model="scaleToFill"></image>
+      <view class="newsFirstImage">
+        <image src="{{item.firstImage}}" model="aspectFit"></image>
       </view>
     </view>
   </view>
