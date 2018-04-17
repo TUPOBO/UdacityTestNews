@@ -17,6 +17,7 @@
   font-size: 25rpx;
   line-height: 35rpx;
   color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 40rpx;
 }
 
 .newsSource {
@@ -27,7 +28,8 @@
   flex-grow: 1;
 }
 
-/* .newsRichText {
-  width: 100%
-} */
+.newsRichText {
+  font-size: 30rpx;
+  line-break: 42rpx;
+}
 

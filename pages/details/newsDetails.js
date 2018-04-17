@@ -8,10 +8,7 @@ Page({
     date: '',
     source: '',
     firstImage: '',
-    content: [{
-      name: 'div',
-      children: []
-    }],
+    content: [],
     readCount: null
   },
 
@@ -26,7 +23,7 @@ Page({
       data: {
         id: id
       },
-      success: (res) => {
+      success: res => {
         console.log(res)
         let result = res.data.result
         let title = result.title
@@ -38,23 +35,42 @@ Page({
         let firstImage = result.firstImage || '/image/news-icon.png'
         let readCount = result.readCount
         /**
-         * 将数据处理的和官方文档中的格式一样，但是rich-text还是无法显示
+         * 将数据处理的和官方文档中的格式一样，
          */
-        let contents = [{
-          name: 'div',
-          children: []
-        }]
+        let contents = []
         for (let content of result.content) {
           delete content.id
-          contents[0].children.push(content)
+          if (content.type == 'image') {
+            contents.push({
+              name: 'img',
+              attrs: {
+                style: 'width: 100%;margin: 10px 0;',
+                src: content.src
+              }
+            })
+          } else if (content.type == 'p' || content.type == 'strong') {
+            contents.push({
+              name: content.type,
+              attrs: {
+                style: 'margin: 10px 0;'
+              },
+              children: [
+                {
+                  type: 'text',
+                  text: content.text
+                }
+              ]
+            })
+          }
         }
+        // console.log(contents)
 
         this.setData({
           title: title,
           source: source,
           date: date,
           readCount: readCount,
-          firstImage: firstImage,
+          // firstImage: firstImage,
           content: contents
         })
       }
