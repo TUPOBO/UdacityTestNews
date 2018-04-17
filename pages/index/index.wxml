@@ -1,5 +1,5 @@
 <view class="newsTypes">
-  <view class="newsTypes-items  {{item.active? 'active': ''}}" wx:for="{{newsType}}" wx:key="{{item.type}}" data-type="{{item.type}}"
+  <view class="newsTypes-items  {{item.type == activeNewsType? 'active': ''}}" wx:for="{{newsType}}" wx:key="{{item.type}}" data-type="{{item.type}}"
     bindtap="changeNewsType">{{item.name}}</view>
 </view>
 <view class="newsList-wrapper">
