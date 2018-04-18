@@ -52,6 +52,7 @@ Page({
     let type = newsTypes[0].type
     this.setNewsActiveType(type)
     this.getNewsInfo(type)
+    // console.log(activeNewsType)
   },
 
   /**
@@ -62,7 +63,8 @@ Page({
     function callback () {
       wx.stopPullDownRefresh()
     }
-    this.getNewsInfo(activeNewsType, callback)
+    this.getNewsInfo(this.data.activeNewsType, callback)
+    // console.log(activeNewsType)
   },
 
   /**
